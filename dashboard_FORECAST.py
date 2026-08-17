@@ -709,26 +709,3 @@ for f in os.listdir("dashboard_data"):
 #         st.dataframe(test_f, use_container_width=True, hide_index=True)
 #     with tab3:
 #         st.dataframe(future_f, use_container_width=True, hide_index=True)
-
-# Install Streamlit (sekali saja)
-!pip install -q streamlit
-
-# Jalankan Streamlit di background, lalu tampilkan lewat proxy port bawaan Colab
-import subprocess, time
-from google.colab import output
-
-# Matikan proses streamlit lama (jika ada) agar tidak bentrok port
-!pkill -f "streamlit run" 2>/dev/null
-
-proc = subprocess.Popen([
-    "streamlit", "run", "streamlit_app.py",
-    "--server.port", "8501",
-    "--server.headless", "true",
-    "--server.enableCORS", "false",
-    "--server.enableXsrfProtection", "false",
-], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-
-time.sleep(8)  # beri waktu Streamlit untuk start
-
-# Buka dashboard di tab/jendela baru lewat proxy Colab (paling stabil, tanpa error dynamic import)
-output.serve_kernel_port_as_window(8501)
