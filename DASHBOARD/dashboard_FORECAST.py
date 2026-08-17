@@ -1,15 +1,3 @@
-"""
-Dashboard Interaktif — Peramalan Nilai Tukar USD/IDR (ARIMA vs LSTM)
-=====================================================================
-Cara menjalankan:
-    1. Pastikan folder `dashboard_data/` (hasil ekspor dari notebook SKRIPSI)
-       berada satu direktori dengan file ini.
-    2. Install dependensi:
-           pip install streamlit plotly pandas
-    3. Jalankan:
-           streamlit run streamlit_app.py
-"""
-
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
