@@ -20,11 +20,11 @@ DATA_DIR = "dashboard_data"
 # --------------------------------------------------------------------------
 @st.cache_data
 def load_data():
-    df_hist = pd.read_csv(f"{DATA_DIR}/dashboard_actual.csv", parse_dates=["Date"])
-    df_test = pd.read_csv(f"{DATA_DIR}/dashboard_test_predictions.csv", parse_dates=["Date"])
-    df_future = pd.read_csv(f"{DATA_DIR}/dashboard_future_forecast.csv", parse_dates=["Date"])
-    df_compare = pd.read_csv(f"{DATA_DIR}/dashboard_model_comparison.csv")
-    meta = pd.read_csv(f"{DATA_DIR}/dashboard_meta.csv").iloc[0]
+    df_hist = pd.read_csv(f"DASHBOARD/dashboard_actual.csv", parse_dates=["Date"])
+    df_test = pd.read_csv(f"DASHBOARD/dashboard_test_predictions.csv", parse_dates=["Date"])
+    df_future = pd.read_csv(f"DASHBOARD/dashboard_future_forecast.csv", parse_dates=["Date"])
+    df_compare = pd.read_csv(f"DASHBOARD/dashboard_model_comparison.csv")
+    meta = pd.read_csv(f"DASHBOARD/dashboard_meta.csv").iloc[0]
     return df_hist, df_test, df_future, df_compare, meta
 
 
